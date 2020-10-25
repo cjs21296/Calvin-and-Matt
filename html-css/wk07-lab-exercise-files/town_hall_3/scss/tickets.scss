@@ -1,0 +1,184 @@
+$ticket-white:white;
+$ticket-head-red:#800000;
+$ticket-off-Red: #931420;
+$ticket-grad1: 30deg, #f6bb73 0%, #f6bb73 30%, $ticket-white 50%, #f6bb73 80%, #f6bb73 100%;
+$ticket-grad2: 30deg, #f6bb73 0%, #fffded 30%, $ticket-white 50%, #fffded 80%, #f6bb73 100%;
+
+/* the styles for the elements */
+* {
+	margin: 0;
+	padding: 0;
+} 
+html {  
+	background-color: $ticket-white;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    width: 800px;
+    margin: 0 auto;
+    border: 3px solid $ticket-head-red;
+    background-color: #fffded;
+}
+a{
+	&:focus{
+		font-style: italic;
+	}
+	&:hover {
+		font-style: italic;
+	}
+}
+/* the styles for the header */
+header {
+	padding: 1.5em 0 2em 0;
+	border-bottom: 3px solid $ticket-off-Red;
+	background-image: -moz-linear-gradient($ticket-grad1);
+	background-image: -webkit-linear-gradient($ticket-grad2);
+	background-image: -o-linear-gradient($ticket-grad2);
+	background-image: linear-gradient($ticket-grad2);
+	h2 {
+		font-size: 175%;
+		color: $ticket-head-red;
+	}
+	h3 {
+		font-size: 130%;
+		font-style: italic;
+	}
+	img {
+		float: left;
+		padding: 0 30px;
+	}
+}
+.shadow {
+	text-shadow: 2px 2px 2px $ticket-head-red;
+}
+/* the styles for the form */
+fieldset {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-top: .5em;
+}
+legend {
+    color: $ticket-off-Red;
+    font-weight: bold;
+    font-size: 85%;
+    margin-bottom: .5em;
+}
+label {
+    float: left;
+    width: 12em;
+    text-align: right;
+}
+label, input, select {
+	font-size: 90%;
+}
+input{
+    width: 15em;
+    margin-left: .5em;
+	margin-bottom: .5em;
+	&:required, input[required] {
+		border: 3px solid red;
+	}
+	&:valid {
+		border: 1px solid black;
+	}
+	&:invalid {
+		box-shadow: none;
+	}
+}
+select {
+    width: 15em;
+    margin-left: .5em;
+    margin-bottom: .5em;
+}
+br {
+    clear: both;
+}
+#buttons input {
+	width: 10em;
+}
+/* the styles for the navigation menu */
+#nav_menu{
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		li {
+			float: left;
+			a {
+				display: block;
+				width: 160px;
+				text-align: center;
+				padding: 1em 0;
+				text-decoration: none;
+				background-color: $ticket-head-red;
+				color: $ticket-white;
+				font-weight: bold;
+			}
+			&:hover > ul {
+				display: block;
+			}
+		}
+		ul {
+			display: none;
+			position: absolute;
+			top: 100%;
+			li {
+				float: none;
+			}
+		}
+	}
+	& > ul::after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+	a.current {
+		color: yellow;
+	}
+}
+/* the styles for the main content */
+main {
+	clear: left;
+}
+/* the styles for the section */
+section {
+	width: 525px;
+	float: right;
+	padding: 0 20px 20px 20px;
+	h1 {
+		font-size: 150%;
+		color: $ticket-head-red;
+		padding: .5em 0 .25em 0;
+		margin: 0;
+	}
+}
+/* the styles for the aside */
+aside {
+	width: 215px;
+	float: right;
+	padding: 0 0 20px 20px;
+	h2 {
+		color: $ticket-head-red;
+		font-size: 130%;
+		padding: .5em 0 .25em 0;
+	}
+	h3 {
+		font-size: 105%;
+		padding-bottom: .25em;
+	}
+	img {
+		padding-bottom: 1em;
+	}
+}
+/* the styles for the footer */
+footer {
+	background-color: $ticket-off-Red;
+	clear: both;
+	p {
+		text-align: center;
+		color: $ticket-white;
+		padding: 1em 0;
+	}
+}
